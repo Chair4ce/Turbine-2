@@ -1,0 +1,15 @@
+type Site {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    site(id: ID!): Site!
+    sites: [Site]!
+}
+
+type Mutation {
+    createSite(name: String!): Site!
+    updateSite(id: ID!, name: String!): Site!
+    deleteSite(id: ID!): Boolean
+}

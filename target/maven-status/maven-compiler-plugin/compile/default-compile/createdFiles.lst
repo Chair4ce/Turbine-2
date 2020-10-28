@@ -1,0 +1,7 @@
+squadron/manager/turbine/NotFoundException.class
+squadron/manager/turbine/site/SiteQueryResolver.class
+squadron/manager/turbine/site/SiteMutationResolver.class
+squadron/manager/turbine/TurbineApplication.class
+squadron/manager/turbine/site/SiteRepository.class
+squadron/manager/turbine/site/Site.class
+squadron/manager/turbine/site/SiteService.class

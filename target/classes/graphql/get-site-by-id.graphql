@@ -1,0 +1,6 @@
+query {
+    site(id: 1) {
+        id
+        name
+    }
+}

@@ -1,0 +1,48 @@
+graphql:
+  servlet:
+    mapping: /api/graphql
+    enabled: true
+    corsEnabled: true
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /api/graphql
+    subscriptions: /subscriptions
+  subscriptions:
+      timeout: 30
+      reconnect: false
+  static:
+    basePath: /
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+      enabled: false
+      version: 0.13.0
+  props:
+    variables:
+      editorTheme: "solarized light"
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/turbinedb?useSSL=false&serverTimezone=UTC
+    username: turbine
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    deserialization:
+      ACCEPT_EMPTY_STRING_AS_NULL_OBJECT: true
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: debug
+    org.springframework.ws: debug
+    org.springframework.ws.client.MessageTracing: trace
+    org.springframework.security: debug
+server.compression:
+  enabled: true
+  mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
+
+

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.root {
+    background: #2F2A2A;
+    height: 100%;
+}
+
+.vitaButton {
+    height: 50px;
+    width: 100px;
+    background: black
+}
