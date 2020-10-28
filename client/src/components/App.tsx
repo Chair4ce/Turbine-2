@@ -3,9 +3,13 @@ import '../styles/App.css';
 import MainView from "./MainView";
 
 function App() {
+
+  function onSubmit() {
+    console.log("Submitted the thing!!")
+  }
   return (
     <div className="App">
-    <MainView/>
+    <MainView onSubmit={onSubmit}/>
     </div>
   );
 }
