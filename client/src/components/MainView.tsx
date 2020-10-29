@@ -18,8 +18,8 @@ const MainView: React.FC<Props> = (props) => {
         props.onSubmit();
     }
     return (
-        <div data-testid="main-view" className={'main'} id="main">
-            <button type={"submit"} data-testid={"submit"} className={'submitButton'} onClick={onButtonClick}> </button>
+        <div data-testid="main-view" className={'main_view'}>
+            <button type={"submit"} data-testid={"btn-submit"} className={'btn_submit'} onClick={onButtonClick}> </button>
             {loading ? <p>Loading... </p> :
                 error ? <p>Uh oh! {error.message}</p> :
                     data && data.sites !== undefined ?

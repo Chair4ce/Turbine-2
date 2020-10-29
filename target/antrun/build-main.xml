@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <copy todir="/Users/ridley/workspace/Turbine-2/target/classes/public">
+      <fileset dir="/Users/ridley/workspace/Turbine-2/client/build" />
+    </copy>
+  </target>
+</project>

@@ -8,7 +8,7 @@ function App() {
     console.log("Submitted the thing!!")
   }
   return (
-    <div className="App">
+    <div data-testid="app" className="App">
     <MainView onSubmit={onSubmit}/>
     </div>
   );

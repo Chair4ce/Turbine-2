@@ -21,7 +21,7 @@ test('should render a loading message while fetching data', async () => {
     const onSubmit = jest.fn();
     const {findByTestId} = renderMainView({onSubmit});
     const mainView = await findByTestId("main-view");
-    expect(mainView.className).toBe("main");
+    expect(mainView.className).toBe("main_view");
     expect(mainView).toHaveTextContent("Loading...");
 });
 
@@ -38,7 +38,7 @@ test('should run the onSubmit callback from props on button click', async () => 
     const onSubmit = jest.fn();
     const {findByTestId} = renderMainView({onSubmit});
 
-    const submit = await findByTestId("submit");
+    const submit = await findByTestId("btn-submit");
 
     fireEvent.click(submit)
     expect(onSubmit).toHaveBeenCalled();

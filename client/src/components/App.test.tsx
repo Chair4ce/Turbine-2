@@ -4,12 +4,23 @@ import App from './App';
 import client from "../apolloClient";
 import {ApolloProvider} from "@apollo/client";
 
-test('renders learn react link', () => {
-    const {getByText} = render(
+function renderMainView() {
+    return render(
         <ApolloProvider client={client}>
-            <App/>
+            <App />
         </ApolloProvider>
     );
-    const linkElement = getByText(/Loading.../i);
-    expect(linkElement).toBeInTheDocument();
+}
+
+test('renders the app', async () => {
+    const {findByTestId} = renderMainView();
+    const app = await findByTestId("app");
+    expect(app).toBeTruthy();
+});
+
+test('contains a child called mainView', async () => {
+    const {findByTestId} = renderMainView();
+    const app = await findByTestId("app");
+    const firstChild = app.firstElementChild;
+    expect(firstChild!.className).toBe("mainView");
 });
