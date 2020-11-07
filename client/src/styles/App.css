@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.btn_submit {
+  height: 80px;
+  width: 100px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

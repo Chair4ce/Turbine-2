@@ -1,7 +1,5 @@
 import React from 'react';
-import {useQuery} from "@apollo/client";
 import SiteModel from "../store/site/SiteModel";
-import {FETCH_SITES} from "../store/site/Queries/FETCH_SITES";
 
 export interface SiteData {
     sites: SiteModel[];
@@ -9,22 +7,25 @@ export interface SiteData {
 
 export interface Props {
     onSubmit: () => void;
+    loading: any;
+    errors: any;
+    data: SiteModel[];
     className?: String;
 }
 
 const MainView: React.FC<Props> = (props) => {
-    const { loading, error, data } = useQuery<SiteData>(FETCH_SITES);
+    // const { loading, error, data } = useQuery<SiteData>(FETCH_SITES);
     const onButtonClick = () => {
         props.onSubmit();
     }
     return (
         <div data-testid="main-view" className={'main_view'}>
             <button type={"submit"} data-testid={"btn-submit"} className={'btn_submit'} onClick={onButtonClick}> </button>
-            {loading ? <p>Loading... </p> :
-                error ? <p>Uh oh! {error.message}</p> :
-                    data && data.sites !== undefined ?
+            {props.loading ? <p>Loading... </p> :
+                props.errors ? <p>Uh oh! {props.errors.message}</p> :
+                    props.data && props.data !== undefined ?
                         <div>
-                            {data.sites.map((site: any) => (
+                            {props.data.map((site: any) => (
                                 <div data-testid={"site-row"} className={'dataRow'} key={site.id}> <p>{site.name}</p></div>
                             ))}
                         </div>

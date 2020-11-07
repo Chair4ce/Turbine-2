@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import client from "./apolloClient";
 import App from "./components/App";
 
+
 ReactDOM.render(
   <React.StrictMode>
       <ApolloProvider client={client}>
